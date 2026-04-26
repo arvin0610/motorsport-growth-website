@@ -20,13 +20,13 @@ export function WorkReel() {
       aria-label="Selected work"
       className="relative w-full bg-mg-black"
     >
-      <div className="px-5 py-24 md:px-8 md:py-32">
+      <div className="px-5 py-14 md:px-8 md:py-20">
         <div className="mx-auto max-w-[1640px]">
           <p className="t-eyebrow">03 / WORK</p>
           <h2 className="t-display t-display-lg mt-6 max-w-[20ch] text-mg-white">
             Programs we&apos;ve operated end-to-end<span className="text-mg-red">.</span>
           </h2>
-          <p className="t-body mt-8 max-w-[58ch] text-mg-bone">
+          <p className="t-body mt-6 max-w-[58ch] text-mg-bone">
             Short list, on purpose. Numbers attached, on purpose.
           </p>
         </div>
@@ -36,8 +36,8 @@ export function WorkReel() {
         <Block key={c.slug} study={c} index={i + 1} />
       ))}
 
-      <div className="px-5 py-20 md:px-8">
-        <div className="mx-auto flex max-w-[1640px] items-center justify-between hairline-t pt-10">
+      <div className="px-5 py-10 md:px-8 md:py-12">
+        <div className="mx-auto flex max-w-[1640px] items-center justify-between hairline-t pt-6">
           <p className="t-mono text-[11px] uppercase tracking-[0.22em] text-mg-ash">
             ARCHIVE / {caseStudies.length} ENTRIES
           </p>
@@ -62,7 +62,7 @@ function Block({ study, index }: { study: CaseStudy; index: number }) {
     <article
       ref={ref}
       className="relative w-full overflow-hidden hairline-t"
-      style={{ height: "100svh", minHeight: 560 }}
+      style={{ height: "78svh", minHeight: 480 }}
     >
       {/* Full-bleed image — only motion is the scale 1.05→1.0 (no translate) */}
       <motion.div className="absolute inset-0 img-plate" style={{ scale }}>
@@ -79,7 +79,7 @@ function Block({ study, index }: { study: CaseStudy; index: number }) {
       </motion.div>
 
       {/* Pinned overlay — left side */}
-      <div className="relative z-10 mx-auto grid h-full w-full max-w-[1640px] grid-cols-12 gap-x-5 px-5 py-10 md:px-8">
+      <div className="relative z-10 mx-auto grid h-full w-full max-w-[1640px] grid-cols-12 gap-x-5 px-5 py-7 md:px-8 md:py-8">
         <div className="col-span-12 flex flex-col justify-between md:col-span-7">
           <div className="flex items-center gap-4">
             <span className="t-mono text-[11px] uppercase tracking-[0.22em] text-mg-bone">
@@ -95,12 +95,12 @@ function Block({ study, index }: { study: CaseStudy; index: number }) {
             <p className="t-mono text-[11px] uppercase tracking-[0.22em] text-mg-bone">
               {study.client}
             </p>
-            <h3 className="t-display mt-3 max-w-[22ch] text-mg-white" style={{ fontSize: "clamp(40px, 6.5vw, 92px)" }}>
+            <h3 className="t-display mt-2 max-w-[22ch] text-mg-white" style={{ fontSize: "clamp(36px, 5.5vw, 80px)" }}>
               {study.title}
             </h3>
-            <p className="t-body mt-5 max-w-[52ch] text-mg-bone">{study.excerpt}</p>
+            <p className="t-body mt-3 max-w-[52ch] text-mg-bone">{study.excerpt}</p>
 
-            <ul className="t-mono mt-8 flex flex-wrap items-center gap-x-8 gap-y-2 text-[12px] uppercase tracking-[0.16em] text-mg-white">
+            <ul className="t-mono mt-5 flex flex-wrap items-center gap-x-8 gap-y-2 text-[12px] uppercase tracking-[0.16em] text-mg-white">
               {study.stats.slice(0, 3).map((s) => (
                 <li key={s.label} className="inline-flex items-baseline gap-2">
                   <span className="text-mg-red">{s.value}</span>
@@ -109,7 +109,7 @@ function Block({ study, index }: { study: CaseStudy; index: number }) {
               ))}
             </ul>
 
-            <div className="mt-10">
+            <div className="mt-6">
               <Link href={`/work/${study.slug}`} className="cta-text" data-cursor="READ">
                 Read case <span className="arrow">→</span>
               </Link>
