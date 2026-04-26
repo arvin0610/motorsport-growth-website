@@ -13,11 +13,11 @@ const colSitemap = [
   { href: "/contact",  label: "Contact" },
 ];
 const colServices = [
-  { href: "/services#performance-advertising", label: "Performance Ads" },
-  { href: "/services#lead-generation",          label: "Lead Gen & Funnels" },
-  { href: "/services#creative-and-ai-production", label: "Creative & AI" },
-  { href: "/services#website-and-ecommerce",    label: "Web & E-Comm" },
-  { href: "/services#brand-and-positioning",    label: "Brand" },
+  { href: "/services#performance-media",        label: "Performance Media" },
+  { href: "/services#shopify-and-conversion",   label: "Shopify & Conversion" },
+  { href: "/services#lifecycle-and-retention",  label: "Lifecycle & Retention" },
+  { href: "/services#brand-and-creative",       label: "Brand & Creative" },
+  { href: "/services#race-program-activation",  label: "Race Program" },
 ];
 const colSocial = [
   { href: "https://instagram.com/motorsportgrowth",       label: "Instagram" },

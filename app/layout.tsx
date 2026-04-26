@@ -62,7 +62,7 @@ const orgSchema = {
   url: SITE_URL,
   logo: `${SITE_URL}/logos/mg-mark-white.png`,
   email: "info@motorsportgrowth.com",
-  foundingDate: "2024-01-01",
+  foundingDate: "2021-01-01",
   address: {
     "@type": "PostalAddress",
     addressLocality: "Agoura Hills",
@@ -92,11 +92,11 @@ const serviceSchema = {
     "@type": "OfferCatalog",
     name: "Motorsport Growth Service Menu",
     itemListElement: [
-      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Performance Advertising" } },
-      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Lead Generation & Funnels" } },
-      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Creative & AI Ad Production" } },
-      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Website & E-Commerce Builds" } },
-      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Brand & Positioning" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Performance Media" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Shopify & Conversion" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Lifecycle & Retention" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Brand & Creative" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Race Program Activation" } },
     ],
   },
 };

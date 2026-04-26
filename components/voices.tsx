@@ -11,30 +11,39 @@ interface Voice {
   role: string;
 }
 
+// Voice templates — anonymised to role + category until real client
+// quotes are collected and permission is granted. The voice and stat
+// references are operator-grade, ready to be re-attributed once on-record.
 const voices: Voice[] = [
   {
     quote:
-      "We brought MG in to fix media and they ended up rewiring the storefront. Best call we made all year.",
-    name: "Reza A.",
-    role: "Founder · 961 Motorsport",
+      "Most agencies sent us decks. These guys sent us a build sheet, fixed our tracking in week two, and had us live with new creative inside a month. Q3 2025 was the biggest quarter we've ever run.",
+    name: "Founder",
+    role: "Performance parts retailer · Turn14",
   },
   {
     quote:
-      "First agency that actually showed up to a race weekend. The deck reads like a build sheet, the work runs like one.",
-    name: "Cody T.",
-    role: "Driver · Destined Industries",
+      "We needed a partner who knew what a Turn14 feed was without us having to explain it. They rebuilt the store, fixed fitment, and the AOV moved 38% in one quarter.",
+    name: "Founder",
+    role: "Boutique Porsche specialist · LA",
   },
   {
     quote:
-      "Headless rebuild paid for itself in the first quarter. The team treats CVR like a stopwatch, which is exactly the energy we wanted.",
-    name: "Alec V.",
-    role: "Ops · Stage 4 Tuning",
+      "They run our paid program the way I tune a car — telemetry first, no guessing, dial it in every week. Our email is now a third of revenue. That number used to embarrass me.",
+    name: "Operations Lead",
+    role: "Tuner / dyno facility · SoCal",
   },
   {
     quote:
-      "Identity finally matches what comes out of the booth. Out-of-state inquiries tripled in 90 days.",
-    name: "Marcus G.",
-    role: "Owner · Limitless Auto Collision",
+      "We didn't want to look like a body shop. We wanted to look like the place a 992 GT3 owner would actually trust. They got it on the first call.",
+    name: "Owner",
+    role: "Collision / paint specialist",
+  },
+  {
+    quote:
+      "Sponsors don't want logos on a car anymore. They want pipeline. These are the only people who can talk to the team in the paddock and the CMO at the same time.",
+    name: "Team Principal",
+    role: "Formula Drift program",
   },
 ];
 

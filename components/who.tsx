@@ -5,17 +5,17 @@ const paragraphs = [
   {
     drop: "[ ORIGIN ]",
     body:
-      "We started inside the paddock, not inside an agency. The team has wrenched on race cars, pulled tire data, and shipped six-figure paint jobs. The marketing instincts came after the lap times.",
+      "Started in a garage in Agoura Hills in 2021, run by operators who'd spent the previous decade inside performance brands — not pitching them. We've launched product lines, valeted at concours, run Formula Drift programs, fought Turn14 feeds, and shipped Shopify rebuilds at 2 AM the night before SEMA opens.",
   },
   {
     drop: "[ APPROACH ]",
     body:
-      "Every account is run like a race program — diagnose, tune, launch, measure, iterate. Forty-minute briefs. Two-week sprints. A live readout every Friday. No deck-ware, no dashboards-for-the-sake-of-dashboards.",
+      "Every client runs like a race program. Build sheet, sector-by-sector plan, telemetry readout, debrief after every session. Paid media, e-commerce, and brand operate as one car — not three vendors handing off Slack threads. We launch fast, measure faster, and tune the program every Monday until the numbers move.",
   },
   {
     drop: "[ EDGE ]",
     body:
-      "Operators talk to operators. Our buyers know the lap times before they know the CPMs. Our photographers know which apex to shoot from. Our engineers have built carts as well as cars. That stack is rare and we lean into it.",
+      "We're the only studio that ships a Turn14-grade Shopify build, a paddock-grade brand, and a Triple-Whale-grade media program from one team. No translation tax between the photo crew, the dev shop, and the media buyer. One war room. One build sheet. One number that matters at quarter-end.",
   },
 ];
 
@@ -43,10 +43,10 @@ export function Who() {
                 }}
               >
                 <span className="text-mg-red">+</span>
-                <Counter to={412} suffix="%" />
+                <Counter to={312} suffix="%" />
               </span>
-              <p className="t-mono mt-6 max-w-[40ch] text-[11px] uppercase tracking-[0.22em] text-mg-ash">
-                AVERAGE LEAD VOLUME LIFT — DESTINED INDUSTRIES, Q3 2025
+              <p className="t-mono mt-6 max-w-[44ch] text-[11px] uppercase tracking-[0.22em] text-mg-ash">
+                YOY REVENUE — DESTINED INDUSTRIES, FY2025 · 4.2× BLENDED ROAS
               </p>
             </div>
           </div>

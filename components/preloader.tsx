@@ -86,7 +86,7 @@ export function Preloader() {
             <div className="t-mono text-[10px] uppercase tracking-[0.32em] text-mg-ash">
               <Typewriter
                 show={phase >= 2}
-                text={`MOTORSPORT GROWTH / EST. 2024 / ${todayStamp()}`}
+                text={`MOTORSPORT GROWTH / EST. 2021 / ${todayStamp()}`}
               />
             </div>
 

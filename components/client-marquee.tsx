@@ -18,7 +18,7 @@ export function ClientMarquee() {
       <div className="mx-auto flex w-full max-w-[920px] items-baseline justify-between gap-6 px-5 py-4 md:px-8">
         <p className="t-eyebrow">— IN THE GARAGE WITH</p>
         <p className="t-mono text-[10px] uppercase tracking-[0.22em] text-mg-ash">
-          {clients.length} BRANDS · 120+ CAMPAIGNS
+          40+ BRANDS · $24M+ PIPELINE
         </p>
       </div>
 

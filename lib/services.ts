@@ -3,65 +3,66 @@ export interface Service {
   slug: string;
   name: string;
   channels: string;
-  preview: string; // image path used in the row hover preview
+  preview: string;
   description: string;
-  outcome: string; // single real outcome metric, mono-friendly
+  outcome: string;
   caseSlug?: string;
 }
 
 export const services: Service[] = [
   {
     index: "01",
-    slug: "performance-advertising",
-    name: "Performance Advertising",
-    channels: "META · TIKTOK · YT",
+    slug: "performance-media",
+    name: "Performance Media",
+    channels: "META · GOOGLE · TIKTOK · YT",
     preview: "/assets/work/destined/01.jpg",
     description:
-      "Paid acquisition for performance brands. We don't run ads — we run race programs: creative testing pipelines, audience cohorts, server-side tracking, and a weekly read built around what actually moved.",
-    outcome: "ROAS 6.2× — DESTINED INDUSTRIES, Q3 2025",
+      "Demand capture and demand generation as one program, one MER target. Creative refreshes weekly, audiences resegment monthly, the report is one page and shows revenue first. CAPI and GA4 wired so the numbers match the bank.",
+    outcome: "4.2× BLENDED ROAS — DESTINED INDUSTRIES, FY2025",
     caseSlug: "destined-industries",
   },
   {
     index: "02",
-    slug: "lead-generation",
-    name: "Lead Generation & Funnels",
-    channels: "QUALIFIED PIPELINE",
-    preview: "/assets/work/961/01.jpg",
+    slug: "shopify-and-conversion",
+    name: "Shopify & Conversion",
+    channels: "SHOPIFY PLUS · TURN14 · WPS · KEYSTONE",
+    preview: "/assets/work/stage4/hero.jpg",
     description:
-      "End-to-end pipelines for shops, dealerships, and program operators. VIN-aware intake, build-spec qualifiers, lifecycle email — calibrated so the inbox fills with work you actually want.",
-    outcome: "CPL −41% — 961 MOTORSPORT, 2025",
+      "Shopify Plus stores built around fitment, not templates. VIN-aware PDPs, Turn14 / WPS / Keystone feeds that don't break, fitment guides that ship, CRO sprints that run year-round.",
+    outcome: "AOV +38% — 961 MOTORSPORT, POST-REBUILD Q1 2026",
     caseSlug: "961-motorsport",
   },
   {
     index: "03",
-    slug: "creative-and-ai-production",
-    name: "Creative & AI Ad Production",
-    channels: "STILLS · MOTION · UGC",
-    preview: "/assets/work/destined/03.jpg",
+    slug: "lifecycle-and-retention",
+    name: "Lifecycle & Retention",
+    channels: "KLAVIYO · SMS · LOYALTY",
+    preview: "/assets/work/961/01.jpg",
     description:
-      "Stills, motion, and AI-assisted production engineered for a calendar — events, drops, and releases. Race-pace volume without the agency-tier per-asset cost.",
-    outcome: "300+ ASSETS / QUARTER — 4 RETAINER CLIENTS",
-  },
-  {
-    index: "04",
-    slug: "website-and-ecommerce",
-    name: "Website & E-Comm Builds",
-    channels: "SHOPIFY · NEXT.JS",
-    preview: "/assets/work/stage4/hero.jpg",
-    description:
-      "Headless Shopify, custom Next.js, and Turn14/WPS-aware product pages. Built for parts catalogues, build sheets, and the way enthusiasts actually finish a build.",
-    outcome: "MOBILE CVR +186% — STAGE 4 TUNING",
+      "Klaviyo and SMS programs that pay the rent between campaigns. Welcome, abandonment, post-purchase, win-back, VIP — built around the aftermarket buying cycle: research-heavy, fitment-anxious, repeat-window long.",
+    outcome: "31% OF REVENUE FROM OWNED CHANNELS — STAGE 4 TUNING, Q4 2025",
     caseSlug: "stage-4-tuning",
   },
   {
-    index: "05",
-    slug: "brand-and-positioning",
-    name: "Brand & Positioning",
-    channels: "STRATEGY · IDENTITY",
+    index: "04",
+    slug: "brand-and-creative",
+    name: "Brand & Creative",
+    channels: "IDENTITY · LIVERY · PHOTO · FILM",
     preview: "/assets/work/limitless/hero.jpg",
     description:
-      "Identity systems, livery, and positioning for shops whose work is top 1% but whose brand is reading top 50%. Wordmarks, palettes, and a content cadence that travels.",
-    outcome: "OUT-OF-STATE INQUIRIES 3.2× — LIMITLESS",
+      "Identity, livery, photo, and film at the level the client wants to be seen. Brand book, on-track and in-studio production, content that feeds every channel for a year. Shoot days are scoped as build sheets — you know what you're getting before the truck rolls.",
+    outcome: "REBRAND → +52% INBOUND RO INQUIRIES IN 90 DAYS — LIMITLESS",
     caseSlug: "limitless-auto-collision",
+  },
+  {
+    index: "05",
+    slug: "race-program-activation",
+    name: "Race Program Activation",
+    channels: "SPONSORSHIP · DRIVER CONTENT · SKU TIE-IN",
+    preview: "/assets/work/destined/03.jpg",
+    description:
+      "Sponsorship that returns dollars, not just impressions. For Formula Drift teams, time-attack programs, and the brands sponsoring them — we build the activation between the truck and the e-commerce site. Driver content, paddock UGC, retail tie-ins, attribution back to the SKU.",
+    outcome: "$840K ACTIVATION-ATTRIBUTED REVENUE — FORMULA DRIFT, 2025",
+    caseSlug: "destined-industries",
   },
 ];

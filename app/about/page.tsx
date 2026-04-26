@@ -11,11 +11,12 @@ export const metadata: Metadata = {
 };
 
 const milestones = [
-  { year: "2024", body: "Founded out of an Agoura Hills garage. First retainer: a privateer drift program." },
-  { year: "2024", body: "Built our first headless Shopify rebuild for a Turn14 reseller. Catalogue depth fixed." },
-  { year: "2025", body: "Crossed $10M revenue driven across the book. First Formula Drift partnership signed." },
-  { year: "2025", body: "Formalised the operator model: diagnose, tune, launch, measure, iterate." },
-  { year: "2026", body: "Now: $24M+ revenue driven, 40+ brands deep, booking nine months out." },
+  { year: "2021", body: "Founded out of a garage in Agoura Hills. First retainer: a privateer Formula Drift program." },
+  { year: "2022", body: "First headless Shopify rebuild for a Turn14 reseller. Catalogue depth fixed, fitment data finally honest." },
+  { year: "2023", body: "Crossed $10M revenue driven across the book. First multi-event motorsport activation signed." },
+  { year: "2024", body: "Formalised the operator model: diagnose, tune, launch, measure, iterate. One war room per client." },
+  { year: "2025", body: "$24M+ revenue driven, 40+ brands deep. Race Program Activation added as a standalone offer." },
+  { year: "2026", body: "Booking nine months out. Two new programs accepted per quarter. The roster stays small on purpose." },
 ];
 
 export default function AboutPage() {
@@ -43,7 +44,7 @@ export default function AboutPage() {
       {/* TIMELINE */}
       <section className="relative w-full bg-mg-black px-5 py-24 md:px-8 md:py-32">
         <div className="mx-auto max-w-[1640px]">
-          <p className="t-eyebrow">[ TIMELINE / 2024 → 2026 ]</p>
+          <p className="t-eyebrow">[ TIMELINE / 2021 → 2026 ]</p>
           <ol className="mt-12 grid grid-cols-1 gap-y-2">
             {milestones.map((m, i) => (
               <li

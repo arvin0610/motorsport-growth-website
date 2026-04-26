@@ -49,18 +49,16 @@ export function Hero() {
         {/* Left column — headline + subhead + CTAs */}
         <div className="col-span-12 mt-12 md:col-span-7 md:col-start-1">
           <h1 className="t-display text-mg-white">
-            <ClipLine delay={0.1}>We don&apos;t run</ClipLine>
+            <ClipLine delay={0.1}>We don&apos;t run ads.</ClipLine>
             <ClipLine delay={0.22}>
-              ads. We run{" "}
+              We run{" "}
               <span className="relative inline-block">
                 <span>race</span>
                 <RaceUnderline />
-              </span>
+              </span>{" "}
+              <span className="t-editorial italic text-mg-white">programs</span>
             </ClipLine>
-            <ClipLine delay={0.34}>
-              <span className="t-editorial italic text-mg-white">programs</span>{" "}
-              <span className="t-display">for brands.</span>
-            </ClipLine>
+            <ClipLine delay={0.34}>for performance brands.</ClipLine>
           </h1>
 
           <motion.p
@@ -69,7 +67,7 @@ export function Hero() {
             transition={{ duration: 0.6, delay: 0.7, ease: easeMg }}
             className="t-body mt-12 max-w-[56ch] text-mg-bone"
           >
-            A performance marketing agency built for the motorsport, automotive, and enthusiast aftermarket industries. We turn horsepower into pipeline.
+            Paid media, e-commerce, and brand — engineered by operators who&apos;ve shipped $24M+ in pipeline for 40+ motorsport, aftermarket, and exotic clients out of Agoura Hills, California.
           </motion.p>
 
           <motion.div
@@ -92,10 +90,10 @@ export function Hero() {
       <div className="relative z-10 hairline-t hairline-b">
         <div className="mx-auto flex w-full max-w-[1640px] flex-wrap items-center justify-between gap-y-3 gap-x-6 px-5 py-3 md:px-8">
           <span className="t-mono text-[11px] uppercase tracking-[0.2em] text-mg-ash">
-            EST. 2024
+            EST. 2021
           </span>
           <span className="t-mono text-[11px] uppercase tracking-[0.2em] text-mg-ash">
-            LOS ANGELES / GLOBAL
+            AGOURA HILLS / GLOBAL
           </span>
           <span className="t-mono inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.2em] text-mg-ash">
             <LiveClock />

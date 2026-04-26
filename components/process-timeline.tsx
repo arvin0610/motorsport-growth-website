@@ -16,36 +16,36 @@ const stages: Stage[] = [
     index: "01",
     name: "Diagnose",
     body:
-      "Audit funnel, channels, creative, attribution. The bottleneck names itself in the data — we don't get to like it or dislike it.",
-    ticker: "AVG. TIMELINE: 5 DAYS",
+      "Two-week teardown. Every line of ad spend, every Klaviyo flow, every PDP, every shoot file. One document: where you're losing money, where you're leaving money, what we ship in the first 60 days.",
+    ticker: "TIMELINE: 2 WEEKS",
   },
   {
     index: "02",
     name: "Tune",
     body:
-      "Rewrite the playbook around the bottleneck. Audiences, offers, landing, instrumentation. Every change ships with a hypothesis.",
+      "Build the car before we race it. Tracking gets fixed (CAPI, GA4, server-side). The Shopify build gets the bolts torqued. Klaviyo gets rebuilt to spec. No new spend until the platform won't fail under load.",
     ticker: "SPRINTS: TWO-WEEK",
   },
   {
     index: "03",
     name: "Launch",
     body:
-      "Stand up the system. Real budget, real surface area, real instrumentation. Soft-launch, then ramp the moment unit economics hold.",
-    ticker: "GO-LIVE: WEEK 03",
+      "Lights out. The first program goes live with a target, a budget, and a creative bank deep enough to last the quarter. Most clients are in-market within 21 days of kickoff.",
+    ticker: "GO-LIVE: ≤ DAY 21",
   },
   {
     index: "04",
     name: "Measure",
     body:
-      "Live readout every Friday. ROAS, CPL, CVR, AOV — and the one number that matters most for this account, never buried.",
+      "Telemetry, not vanity. One dashboard, one blended-MER number. Daily for the first 30 days, weekly after. Every Monday: a 30-min debrief on what moved, what didn't, the three things we change this week.",
     ticker: "READOUT: WEEKLY",
   },
   {
     index: "05",
     name: "Iterate",
     body:
-      "What's working scales. What's breaking gets ripped. We don't fall in love with creative, channels, or our own decks.",
-    ticker: "PIPELINE: ALWAYS",
+      "Tune the program every week, retune the strategy every quarter. Creative on a 30-day refresh cadence. Annual planning timed to SEMA, FD season, and Q4 retail. The program never sits still because the season doesn't.",
+    ticker: "CADENCE: ALWAYS",
   },
 ];
 
