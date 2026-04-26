@@ -68,6 +68,7 @@ export function Nav() {
               <li key={l.href}>
                 <Link
                   href={l.href}
+                  data-cursor=""
                   className="t-mono link-draw text-[12px] uppercase tracking-[0.18em] text-mg-bone hover:text-mg-white"
                 >
                   {l.label}
@@ -77,6 +78,7 @@ export function Nav() {
           </ul>
           <Link
             href="/contact"
+            data-cursor=""
             className="cta-text"
             aria-label="Start a project"
           >
@@ -123,6 +125,7 @@ export function Nav() {
                   <Link
                     href={l.href}
                     onClick={() => setOpen(false)}
+                    data-cursor=""
                     className="flex items-baseline gap-5 py-6"
                   >
                     <span className="t-mono text-[10px] tracking-[0.28em] text-mg-ash">
@@ -139,6 +142,7 @@ export function Nav() {
               <Link
                 href="/contact"
                 onClick={() => setOpen(false)}
+                data-cursor=""
                 className="cta-text"
               >
                 Start a Project <span className="arrow">→</span>

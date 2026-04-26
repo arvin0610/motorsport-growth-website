@@ -3,10 +3,12 @@
 import { useEffect, useRef, useState } from "react";
 
 /**
- * Custom cursor — 8px white circle, mix-blend-difference. On any element
- * marked with `data-cursor="LABEL"` (or any anchor/button), it scales to
- * 48px and shows the label in mono. Hidden on coarse pointers and when
- * the user has prefers-reduced-motion: reduce.
+ * Custom cursor — 8px red circle. On any element marked with
+ * `data-cursor="LABEL"` (or any anchor/button) it scales to 56px and shows
+ * the label in mono. Empty `data-cursor=""` means "hot but no label" —
+ * useful on nav links where the label adds noise.
+ *
+ * Hidden on coarse pointers and on prefers-reduced-motion: reduce.
  */
 export function Cursor() {
   const ref = useRef<HTMLDivElement | null>(null);
@@ -38,16 +40,17 @@ export function Cursor() {
       raf = requestAnimationFrame(tick);
     };
 
+    // Tri-state: null = not hot. "" = hot, no label. "TEXT" = hot, with label.
     const setHot = (label: string | null) => {
       const el = ref.current;
       const lab = labelRef.current;
       if (!el || !lab) return;
-      if (label) {
-        el.dataset.hot = "1";
-        lab.textContent = label;
-      } else {
+      if (label === null) {
         el.dataset.hot = "0";
         lab.textContent = "";
+      } else {
+        el.dataset.hot = "1";
+        lab.textContent = label;
       }
     };
 
@@ -59,7 +62,8 @@ export function Cursor() {
       );
       if (!interactive) return setHot(null);
       const explicit = interactive.getAttribute("data-cursor");
-      if (explicit && explicit !== "hot") return setHot(explicit);
+      // Explicit attribute wins — empty string = hot with no label.
+      if (explicit !== null) return setHot(explicit.trim());
       // Default labels by element type
       const tag = interactive.tagName.toLowerCase();
       if (tag === "a") return setHot("OPEN");
@@ -98,11 +102,10 @@ export function Cursor() {
       <span ref={labelRef} className="mg-cursor__label" />
       <style jsx>{`
         .mg-cursor {
-          width: 8px;
-          height: 8px;
+          width: 10px;
+          height: 10px;
           border-radius: 999px;
-          background: var(--color-mg-white);
-          mix-blend-mode: difference;
+          background: var(--color-mg-red);
           will-change: transform, width, height;
           transition: width 240ms var(--ease-mg-out), height 240ms var(--ease-mg-out),
             background 240ms var(--ease-mg-out);
@@ -113,7 +116,7 @@ export function Cursor() {
         .mg-cursor[data-hot="1"] {
           width: 56px;
           height: 56px;
-          background: var(--color-mg-white);
+          background: var(--color-mg-red);
         }
         .mg-cursor__label {
           font-family: var(--font-mono);
@@ -121,12 +124,12 @@ export function Cursor() {
           font-weight: 500;
           letter-spacing: 0.18em;
           text-transform: uppercase;
-          color: var(--color-mg-black);
+          color: var(--color-mg-white);
           opacity: 0;
           transition: opacity 200ms var(--ease-mg-out);
           white-space: nowrap;
         }
-        .mg-cursor[data-hot="1"] .mg-cursor__label {
+        .mg-cursor[data-hot="1"] .mg-cursor__label:not(:empty) {
           opacity: 1;
         }
       `}</style>
