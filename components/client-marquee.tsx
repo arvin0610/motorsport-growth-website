@@ -36,7 +36,6 @@ export function ClientMarquee() {
                 width={300}
                 height={96}
                 className="h-full w-auto max-w-full object-contain"
-                style={{ filter: "brightness(0) invert(1)" }}
               />
             </span>
           ))}
