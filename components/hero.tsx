@@ -79,7 +79,7 @@ export function Hero() {
             <Link href="/contact" className="btn-primary" data-cursor="START">
               Start a Project <span className="arrow">→</span>
             </Link>
-            <Link href="/work" className="cta-text" data-cursor="OPEN">
+            <Link href="/work" className="btn-secondary" data-cursor="OPEN">
               See the Work <span className="arrow">→</span>
             </Link>
           </motion.div>

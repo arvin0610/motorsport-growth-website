@@ -188,39 +188,74 @@ button:focus-visible, a:focus-visible {
 .btn-arrow:focus-visible > .arrow { transform: translateX(8px); }
 
 /* ============================================================
-   PRIMARY BUTTON — solid, sharp, no glow, no rounded
-   56px tall, mono caps, white-on-black inverted on hover
+   CTA BUTTONS — red 2px stroke, noticeable, no glow
+   60px tall, mono caps. Primary fills red on hover.
    ============================================================ */
 
 .btn-primary {
   display: inline-flex;
   align-items: center;
   gap: 14px;
-  height: 56px;
-  padding: 0 28px;
+  height: 60px;
+  padding: 0 30px;
   background: var(--color-mg-white);
   color: var(--color-mg-black);
   font-family: var(--font-mono);
-  font-weight: 500;
+  font-weight: 600;
   font-size: 13px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  border: 1px solid var(--color-mg-white);
-  transition: background 240ms var(--ease-mg-out), color 240ms var(--ease-mg-out), border-color 240ms var(--ease-mg-out);
+  border: 2px solid var(--color-mg-red);
+  transition: background 240ms var(--ease-mg-out), color 240ms var(--ease-mg-out);
 }
 .btn-primary:hover,
 .btn-primary:focus-visible {
-  background: transparent;
+  background: var(--color-mg-red);
   color: var(--color-mg-white);
 }
 .btn-primary > .arrow {
   display: inline-block;
-  transition: transform 240ms var(--ease-mg-out);
+  transition: transform 240ms var(--ease-mg-out), color 240ms var(--ease-mg-out);
   color: var(--color-mg-red);
 }
 .btn-primary:hover > .arrow,
 .btn-primary:focus-visible > .arrow {
   transform: translateX(8px);
+  color: var(--color-mg-white);
+}
+
+/* Secondary / ghost CTA — transparent fill, red 2px stroke, white text.
+   Use for the second CTA in a row where the primary is the main action. */
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  height: 60px;
+  padding: 0 30px;
+  background: transparent;
+  color: var(--color-mg-white);
+  font-family: var(--font-mono);
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  border: 2px solid var(--color-mg-red);
+  transition: background 240ms var(--ease-mg-out), color 240ms var(--ease-mg-out);
+}
+.btn-secondary:hover,
+.btn-secondary:focus-visible {
+  background: var(--color-mg-red);
+  color: var(--color-mg-white);
+}
+.btn-secondary > .arrow {
+  display: inline-block;
+  transition: transform 240ms var(--ease-mg-out);
+  color: var(--color-mg-red);
+}
+.btn-secondary:hover > .arrow,
+.btn-secondary:focus-visible > .arrow {
+  transform: translateX(8px);
+  color: var(--color-mg-white);
 }
 
 /* Text-link CTA — used in nav, secondary actions */
