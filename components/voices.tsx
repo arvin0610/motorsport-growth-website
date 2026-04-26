@@ -64,7 +64,7 @@ export function Voices() {
     >
       <div className="mx-auto max-w-[1640px]">
         <div className="flex items-end justify-between">
-          <p className="t-eyebrow">05 / VOICES</p>
+          <p className="t-eyebrow">VOICES</p>
           <p className="t-mono text-[11px] uppercase tracking-[0.22em] text-mg-ash">
             {String(i + 1).padStart(2, "0")} / {String(voices.length).padStart(2, "0")}
           </p>

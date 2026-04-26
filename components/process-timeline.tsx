@@ -68,7 +68,7 @@ export function ProcessTimeline() {
       <div className="mx-auto max-w-[1640px]">
         <div className="flex items-end justify-between gap-6">
           <div>
-            <p className="t-eyebrow">04 / PROCESS</p>
+            <p className="t-eyebrow">PROCESS</p>
             <h2 className="t-display t-display-lg mt-6 max-w-[16ch] text-mg-white">
               From dyno to delivery.
             </h2>

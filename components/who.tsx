@@ -27,7 +27,7 @@ export function Who() {
       className="relative w-full bg-mg-black px-5 py-32 md:px-8 md:py-40"
     >
       <div className="mx-auto max-w-[1640px]">
-        <p className="t-eyebrow">01 / WHO</p>
+        <p className="t-eyebrow">WHO</p>
 
         <div className="mt-12 grid grid-cols-12 gap-x-5 gap-y-12">
           {/* Sticky stat — 5 cols */}

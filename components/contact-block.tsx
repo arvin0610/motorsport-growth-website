@@ -18,7 +18,7 @@ export function ContactBlock() {
       className="relative w-full bg-mg-black px-5 py-32 md:px-8 md:py-40"
     >
       <div className="mx-auto max-w-[1640px]">
-        <p className="t-eyebrow">06 / CONTACT</p>
+        <p className="t-eyebrow">CONTACT</p>
 
         {/* Top half: oversized type */}
         <h2

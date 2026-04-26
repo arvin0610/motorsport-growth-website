@@ -24,7 +24,7 @@ export function ServicesIndex() {
       className="relative w-full bg-mg-black px-5 py-32 md:px-8 md:py-40"
     >
       <div className="mx-auto max-w-[1640px]">
-        <p className="t-eyebrow">02 / WHAT WE DO</p>
+        <p className="t-eyebrow">WHAT WE DO</p>
         <h2 className="t-display t-display-lg mt-6 max-w-[18ch] text-mg-white">
           A service menu, not a brochure.
         </h2>
