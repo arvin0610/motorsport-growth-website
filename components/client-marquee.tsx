@@ -25,19 +25,15 @@ export function ClientMarquee() {
       <div className="marquee h-[180px] items-center md:h-[200px]">
         <div className="marquee-track marquee-track--ltr">
           {items.map((c, i) => (
-            <span
+            <Image
               key={`${c.slug}-${i}`}
+              src={c.logo}
+              alt={i < clients.length ? c.name : ""}
               aria-hidden={i >= clients.length || undefined}
-              className="relative flex h-20 w-[260px] shrink-0 items-center justify-center md:h-24 md:w-[300px]"
-            >
-              <Image
-                src={c.logo}
-                alt={i < clients.length ? c.name : ""}
-                width={300}
-                height={96}
-                className="h-full w-auto max-w-full object-contain"
-              />
-            </span>
+              width={400}
+              height={300}
+              className="h-24 w-auto shrink-0 md:h-28"
+            />
           ))}
         </div>
       </div>
