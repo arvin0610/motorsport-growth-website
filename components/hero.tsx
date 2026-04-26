@@ -10,12 +10,11 @@ import { easeMg } from "@/lib/motion";
 /**
  * Hero — "The Pit Wall"
  *
- * 45 / 55 asymmetric split (desktop):
- *   - Left  (45%)  : Massive headline + subhead + CTAs, ragged-right
- *   - Right (55%)  : Cropped car image, bleeds off the right edge of the viewport
+ * Full-bleed background image across the whole section, dimmed by a flat
+ * dark scrim (NOT a gradient — brief rule). Headline + subhead + CTAs sit
+ * on top, anchored to the left ~60% of the grid.
  *
  * The word "race" is underlined with a hand-drawn SVG stroke in red.
- * No gradient over the image. No glow. No fade-up.
  */
 export function Hero() {
   return (
@@ -23,27 +22,25 @@ export function Hero() {
       aria-label="Hero"
       className="relative w-full overflow-hidden bg-mg-black"
     >
-      {/* Image bleeds the right 55% */}
-      <div className="pointer-events-none absolute inset-y-0 right-0 z-0 w-full md:w-[58%] lg:w-[55%]">
-        <div className="img-plate relative h-full w-full">
-          <Image
-            src="/assets/hero/hero-primary.jpg"
-            alt="Motorsport Growth — performance marketing for the paddock"
-            fill
-            priority
-            quality={90}
-            sizes="(min-width: 1024px) 55vw, 100vw"
-            className="object-cover object-[60%_50%]"
-          />
-          {/* Optional bleed dim — flat, not gradient. 12% black scrim only on mobile. */}
-          <div className="absolute inset-0 bg-mg-black/40 md:bg-transparent" aria-hidden />
-        </div>
+      {/* Full-bleed background image */}
+      <div className="pointer-events-none absolute inset-0 z-0">
+        <Image
+          src="/assets/hero/hero-primary.jpg"
+          alt=""
+          fill
+          priority
+          quality={90}
+          sizes="100vw"
+          className="object-cover object-[60%_55%]"
+        />
+        {/* Flat dark scrim — solid, not gradient. Brings white text to AAA contrast. */}
+        <div className="absolute inset-0 bg-mg-black/55" aria-hidden />
       </div>
 
       <div className="relative z-10 mx-auto grid min-h-[100svh] w-full max-w-[1640px] grid-cols-12 gap-x-5 px-5 pb-28 pt-32 md:px-8 md:pt-40">
         {/* Top section index */}
         <div className="col-span-12 -mt-6 md:col-span-6">
-          <p className="t-eyebrow">00 / HERO</p>
+          <p className="t-eyebrow !text-mg-bone">00 / HERO</p>
         </div>
 
         {/* Left column — headline + subhead + CTAs */}
@@ -65,7 +62,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.7, ease: easeMg }}
-            className="t-body mt-12 max-w-[56ch] text-mg-bone"
+            className="t-body mt-12 max-w-[56ch] font-medium text-mg-white"
           >
             Paid media, e-commerce, and brand — engineered by operators who&apos;ve shipped $24M+ in pipeline for 40+ motorsport, aftermarket, and exotic clients out of Agoura Hills, California.
           </motion.p>
@@ -86,23 +83,23 @@ export function Hero() {
         </div>
       </div>
 
-      {/* Hero metadata strip */}
-      <div className="relative z-10 hairline-t hairline-b">
+      {/* Hero metadata strip — solid black bg so hairlines + mono read cleanly over the image */}
+      <div className="relative z-10 bg-mg-black hairline-t hairline-b">
         <div className="mx-auto flex w-full max-w-[1640px] flex-wrap items-center justify-between gap-y-3 gap-x-6 px-5 py-3 md:px-8">
-          <span className="t-mono text-[11px] uppercase tracking-[0.2em] text-mg-ash">
+          <span className="t-mono text-[11px] uppercase tracking-[0.2em] text-mg-bone">
             EST. 2021
           </span>
-          <span className="t-mono text-[11px] uppercase tracking-[0.2em] text-mg-ash">
+          <span className="t-mono text-[11px] uppercase tracking-[0.2em] text-mg-bone">
             AGOURA HILLS / GLOBAL
           </span>
-          <span className="t-mono inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.2em] text-mg-ash">
+          <span className="t-mono inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.2em] text-mg-bone">
             <LiveClock />
           </span>
-          <span className="t-mono inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.2em] text-mg-ash">
+          <span className="t-mono inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.2em] text-mg-bone">
             <CloudFog size={12} strokeWidth={1.5} aria-hidden />
             18°C
           </span>
-          <span className="t-mono inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.2em] text-mg-ash">
+          <span className="t-mono inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.2em] text-mg-bone">
             SCROLL{" "}
             <motion.span
               animate={{ y: [0, 3, 0] }}
