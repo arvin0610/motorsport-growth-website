@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { LiveClock } from "./live-clock";
@@ -42,17 +43,22 @@ export function Nav() {
       ].join(" ")}
     >
       <div className="mx-auto flex h-16 w-full max-w-[1640px] items-center justify-between px-5 md:px-8">
-        {/* Wordmark */}
+        {/* Logo lockup — MG Logo-08.png */}
         <Link
           href="/"
           aria-label="Motorsport Growth — Home"
-          className="group inline-flex items-center"
+          className="inline-flex items-center"
           data-cursor="HOME"
         >
-          <span className="t-display text-[20px] tracking-[-0.02em] leading-none text-mg-white sm:text-[22px]">
-            MOTORSPORT&nbsp;
-            <span className="transition-colors duration-200 group-hover:text-mg-red">G</span>ROWTH
-          </span>
+          <Image
+            src="/logos/mg-nav.png"
+            alt="Motorsport Growth"
+            width={4821}
+            height={1010}
+            priority
+            sizes="(min-width: 768px) 180px, 140px"
+            className="h-[28px] w-auto md:h-[32px]"
+          />
         </Link>
 
         {/* Desktop right cluster */}
@@ -93,9 +99,14 @@ export function Nav() {
       {open && (
         <div className="fixed inset-0 z-50 flex flex-col bg-mg-black md:hidden">
           <div className="flex h-16 items-center justify-between px-5 hairline-b">
-            <span className="t-display text-[20px] tracking-[-0.02em] text-mg-white">
-              MOTORSPORT GROWTH
-            </span>
+            <Image
+              src="/logos/mg-nav.png"
+              alt="Motorsport Growth"
+              width={4821}
+              height={1010}
+              sizes="140px"
+              className="h-[28px] w-auto"
+            />
             <button
               type="button"
               onClick={() => setOpen(false)}
