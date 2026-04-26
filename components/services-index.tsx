@@ -70,7 +70,7 @@ function Row({
         onBlur={() => onHover(false)}
         aria-expanded={isExpanded}
         data-cursor={isExpanded ? "CLOSE" : "OPEN"}
-        className="group relative flex w-full items-center gap-4 py-7 text-left md:gap-8 md:py-7"
+        className="group relative flex w-full items-center gap-4 py-7 text-left md:gap-8 md:py-7 lg:min-h-[124px] xl:min-h-[128px]"
       >
         {/* Red bar — slides in from left on hover */}
         <span
