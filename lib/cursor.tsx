@@ -3,10 +3,13 @@
 import { useEffect, useRef, useState } from "react";
 
 /**
- * Custom cursor — 8px red circle. On any element marked with
+ * Custom cursor — 10px red dot. On any element marked with
  * `data-cursor="LABEL"` (or any anchor/button) it scales to 56px and shows
- * the label in mono. Empty `data-cursor=""` means "hot but no label" —
- * useful on nav links where the label adds noise.
+ * the label in mono. Empty `data-cursor=""` = hot but no label.
+ *
+ * Optional `data-cursor-mode="invert"` switches the cursor to a white disc
+ * with `mix-blend-mode: difference` — used on nav menu links so the disc
+ * inverts whatever it passes over (Awwwards-style scrubber effect).
  *
  * Hidden on coarse pointers and on prefers-reduced-motion: reduce.
  */
@@ -41,15 +44,17 @@ export function Cursor() {
     };
 
     // Tri-state: null = not hot. "" = hot, no label. "TEXT" = hot, with label.
-    const setHot = (label: string | null) => {
+    const setHot = (label: string | null, mode: string = "default") => {
       const el = ref.current;
       const lab = labelRef.current;
       if (!el || !lab) return;
       if (label === null) {
         el.dataset.hot = "0";
+        el.dataset.mode = "default";
         lab.textContent = "";
       } else {
         el.dataset.hot = "1";
+        el.dataset.mode = mode;
         lab.textContent = label;
       }
     };
@@ -62,13 +67,14 @@ export function Cursor() {
       );
       if (!interactive) return setHot(null);
       const explicit = interactive.getAttribute("data-cursor");
+      const mode = interactive.getAttribute("data-cursor-mode") ?? "default";
       // Explicit attribute wins — empty string = hot with no label.
-      if (explicit !== null) return setHot(explicit.trim());
+      if (explicit !== null) return setHot(explicit.trim(), mode);
       // Default labels by element type
       const tag = interactive.tagName.toLowerCase();
-      if (tag === "a") return setHot("OPEN");
-      if (tag === "button") return setHot("CLICK");
-      setHot("VIEW");
+      if (tag === "a") return setHot("OPEN", mode);
+      if (tag === "button") return setHot("CLICK", mode);
+      setHot("VIEW", mode);
     };
 
     const onOut = (e: MouseEvent) => {
@@ -96,6 +102,7 @@ export function Cursor() {
     <div
       ref={ref}
       data-hot="0"
+      data-mode="default"
       aria-hidden
       className="mg-cursor pointer-events-none fixed left-0 top-0 z-[100]"
     >
@@ -118,6 +125,11 @@ export function Cursor() {
           height: 56px;
           background: var(--color-mg-red);
         }
+        /* Inverted mode — Awwwards scrubber: white disc through difference blend. */
+        .mg-cursor[data-mode="invert"][data-hot="1"] {
+          background: var(--color-mg-white);
+          mix-blend-mode: difference;
+        }
         .mg-cursor__label {
           font-family: var(--font-mono);
           font-size: 9px;
@@ -132,6 +144,8 @@ export function Cursor() {
         .mg-cursor[data-hot="1"] .mg-cursor__label:not(:empty) {
           opacity: 1;
         }
+        /* Inverted disc never shows a label — it's a pure shape. */
+        .mg-cursor[data-mode="invert"] .mg-cursor__label { opacity: 0 !important; }
       `}</style>
     </div>
   );

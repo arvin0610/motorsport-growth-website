@@ -69,6 +69,7 @@ export function Nav() {
                 <Link
                   href={l.href}
                   data-cursor=""
+                  data-cursor-mode="invert"
                   className="t-mono link-draw text-[12px] uppercase tracking-[0.18em] text-mg-bone hover:text-mg-white"
                 >
                   {l.label}
@@ -79,6 +80,7 @@ export function Nav() {
           <Link
             href="/contact"
             data-cursor=""
+            data-cursor-mode="invert"
             className="cta-text"
             aria-label="Start a project"
           >
@@ -126,6 +128,7 @@ export function Nav() {
                     href={l.href}
                     onClick={() => setOpen(false)}
                     data-cursor=""
+                    data-cursor-mode="invert"
                     className="flex items-baseline gap-5 py-6"
                   >
                     <span className="t-mono text-[10px] tracking-[0.28em] text-mg-ash">
@@ -143,6 +146,7 @@ export function Nav() {
                 href="/contact"
                 onClick={() => setOpen(false)}
                 data-cursor=""
+                data-cursor-mode="invert"
                 className="cta-text"
               >
                 Start a Project <span className="arrow">→</span>
