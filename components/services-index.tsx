@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence } from "motion/react";
 import { Plus, Minus } from "lucide-react";
@@ -98,28 +97,6 @@ function Row({
         {/* Channels (hidden on mobile) */}
         <span className="t-mono hidden text-[11px] uppercase tracking-[0.22em] text-mg-ash lg:inline-block lg:w-[260px] lg:text-right">
           {service.channels}
-        </span>
-
-        {/* Image preview — slides in from right on hover (desktop only) */}
-        <span
-          aria-hidden
-          className="relative ml-2 hidden h-[68px] w-[120px] shrink-0 overflow-hidden lg:block xl:h-[72px] xl:w-[140px]"
-        >
-          <span
-            className={[
-              "absolute inset-0 transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]",
-              isHovered ? "translate-x-0" : "translate-x-[110%]",
-            ].join(" ")}
-          >
-            <Image
-              src={service.preview}
-              alt=""
-              fill
-              sizes="140px"
-              className="object-cover"
-              style={{ filter: "saturate(0.85) contrast(1.05)" }}
-            />
-          </span>
         </span>
 
         {/* +/− toggle */}
