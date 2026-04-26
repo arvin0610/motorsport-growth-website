@@ -48,7 +48,8 @@ export function Nav() {
           href="/"
           aria-label="Motorsport Growth — Home"
           className="inline-flex items-center"
-          data-cursor="HOME"
+          data-cursor=""
+          data-cursor-mode="invert"
         >
           <Image
             src="/logos/mg-nav.png"
