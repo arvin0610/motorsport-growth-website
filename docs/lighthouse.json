@@ -1,0 +1,11 @@
+{
+  "$schema": "placeholder",
+  "note": "Populate this file by running `npx lighthouse http://localhost:3000 --output=json --output-path=docs/lighthouse.json --preset=desktop --quiet --chrome-flags='--headless=new'` against a production build (`npm run build && npm run start`) on a clean cold cache. Target: ≥ 95 on Performance, Accessibility, Best Practices, SEO.",
+  "lastRun": null,
+  "scores": {
+    "performance": null,
+    "accessibility": null,
+    "bestPractices": null,
+    "seo": null
+  }
+}
