@@ -14,8 +14,8 @@ export function ClientMarquee() {
       aria-label="Trusted by"
       className="relative w-full bg-mg-black hairline-t hairline-b"
     >
-      {/* Eyebrow + count */}
-      <div className="mx-auto flex w-full max-w-[1640px] items-baseline justify-between px-5 py-4 md:px-8">
+      {/* Eyebrow + count — narrow strip, centered */}
+      <div className="mx-auto flex w-full max-w-[920px] items-baseline justify-between gap-6 px-5 py-4 md:px-8">
         <p className="t-eyebrow">— IN THE GARAGE WITH</p>
         <p className="t-mono text-[10px] uppercase tracking-[0.22em] text-mg-ash">
           {clients.length} BRANDS · 120+ CAMPAIGNS
