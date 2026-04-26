@@ -102,7 +102,7 @@ export function Nav() {
             <Image
               src="/logos/mg-nav.png"
               alt="Motorsport Growth"
-              width={4821}
+              width={5391}
               height={1010}
               sizes="140px"
               className="h-[28px] w-auto"

@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 import { LiveClock } from "./live-clock";
 
@@ -31,24 +32,20 @@ export function Footer() {
       className="relative w-full bg-mg-black px-5 pb-8 pt-24 md:px-8 md:pt-32"
     >
       <div className="mx-auto max-w-[1640px]">
-        {/* ROW 1 — giant wordmark + tag */}
+        {/* ROW 1 — giant logo lockup + tag */}
         <div className="hairline-t pt-8">
           <p className="t-mono text-[11px] uppercase tracking-[0.22em] text-mg-ash">
             / TAGLINE
           </p>
-          <h2
-            aria-label="Motorsport Growth"
-            className="t-display mt-4 text-mg-white"
-            style={{
-              fontSize: "clamp(64px, 14vw, 260px)",
-              letterSpacing: "-0.04em",
-              lineHeight: 0.86,
-            }}
-          >
-            MOTORSPORT
-            <br />
-            GROWTH<span className="text-mg-red">.</span>
-          </h2>
+          <Image
+            src="/logos/mg-tagline.png"
+            alt="Motorsport Growth"
+            width={2500}
+            height={1010}
+            sizes="(min-width: 768px) 90vw, 100vw"
+            priority={false}
+            className="mt-6 h-auto w-full max-w-[1640px]"
+          />
           <p className="t-mono mt-8 text-[12px] uppercase tracking-[0.32em] text-mg-bone">
             HORSEPOWER <span className="text-mg-red">→</span> PIPELINE
           </p>
