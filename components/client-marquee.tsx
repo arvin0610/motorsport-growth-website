@@ -2,14 +2,12 @@ import Image from "next/image";
 import { clients } from "@/lib/clients";
 
 /**
- * Dual-row client logo marquee.
- * Top row scrolls left (LTR), bottom row scrolls right (RTL).
- * Constant 40s velocity, paused on hover. Reduced motion = static grid.
+ * Single-row client logo marquee. Constant 40s velocity, runs continuously
+ * (does NOT pause on hover). Reduced motion = static (handled in globals.css).
  */
 export function ClientMarquee() {
-  // Split into two rows for variety
-  const rowA = clients;
-  const rowB = [...clients].reverse();
+  // Duplicate the track for a seamless 50% loop.
+  const items = [...clients, ...clients];
 
   return (
     <section
@@ -24,48 +22,26 @@ export function ClientMarquee() {
         </p>
       </div>
 
-      <Row tracks={rowA} dir="ltr" />
-      <div className="hr-mg" />
-      <Row tracks={rowB} dir="rtl" />
-
-      {/* Reduced-motion fallback: static grid (only visible when marquee is off via CSS) */}
-      <div className="hidden print:flex" aria-hidden>
-        {/* Hidden by default, exposed when reduced motion is on via CSS in globals */}
+      <div className="marquee h-[180px] items-center md:h-[200px]">
+        <div className="marquee-track marquee-track--ltr">
+          {items.map((c, i) => (
+            <span
+              key={`${c.slug}-${i}`}
+              aria-hidden={i >= clients.length || undefined}
+              className="relative flex h-20 w-[260px] shrink-0 items-center justify-center md:h-24 md:w-[300px]"
+            >
+              <Image
+                src={c.logo}
+                alt={i < clients.length ? c.name : ""}
+                width={300}
+                height={96}
+                className="h-full w-auto max-w-full object-contain"
+                style={{ filter: "brightness(0) invert(1)" }}
+              />
+            </span>
+          ))}
+        </div>
       </div>
     </section>
-  );
-}
-
-function Row({ tracks, dir }: { tracks: typeof clients; dir: "ltr" | "rtl" }) {
-  // Duplicate the track for seamless loop — animation translates by -50%.
-  const items = [...tracks, ...tracks];
-
-  return (
-    <div className="marquee h-[120px] items-center">
-      <div
-        className={
-          dir === "ltr"
-            ? "marquee-track marquee-track--ltr"
-            : "marquee-track marquee-track--rtl"
-        }
-      >
-        {items.map((c, i) => (
-          <span
-            key={`${c.slug}-${i}`}
-            aria-hidden={i >= tracks.length || undefined}
-            className="relative flex h-12 w-[180px] shrink-0 items-center justify-center"
-          >
-            <Image
-              src={c.logo}
-              alt={i < tracks.length ? c.name : ""}
-              width={180}
-              height={48}
-              className="h-12 w-auto object-contain opacity-60 transition-opacity duration-300 hover:opacity-100"
-              style={{ filter: "brightness(0) invert(1)" }}
-            />
-          </span>
-        ))}
-      </div>
-    </div>
   );
 }

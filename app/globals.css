@@ -305,7 +305,6 @@ button:focus-visible, a:focus-visible {
 }
 .marquee-track--ltr { animation: mg-marquee-ltr 40s linear infinite; }
 .marquee-track--rtl { animation: mg-marquee-rtl 40s linear infinite; }
-.marquee:hover .marquee-track { animation-play-state: paused; }
 
 @keyframes mg-marquee-ltr {
   from { transform: translate3d(0, 0, 0); }
