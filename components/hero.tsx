@@ -43,19 +43,24 @@ export function Hero() {
           <p className="t-eyebrow !text-mg-bone">00 / HERO</p>
         </div>
 
-        {/* Left column — headline + subhead + CTAs */}
-        <div className="col-span-12 mt-12 md:col-span-7 md:col-start-1">
-          <h1 className="t-display text-mg-white">
-            <ClipLine delay={0.1}>We don&apos;t run ads.</ClipLine>
-            <ClipLine delay={0.22}>
+        {/* Left column — one-line headline + subhead + CTAs */}
+        <div className="col-span-12 mt-12 md:col-start-1">
+          <h1
+            className="t-display text-mg-white"
+            style={{
+              fontSize: "clamp(56px, 11vw, 168px)",
+              lineHeight: 0.92,
+              letterSpacing: "-0.035em",
+            }}
+          >
+            <ClipLine delay={0.12}>
               We run{" "}
               <span className="relative inline-block">
                 <span>race</span>
                 <RaceUnderline />
               </span>{" "}
-              <span className="t-editorial italic text-mg-white">programs</span>
+              <span className="t-editorial italic text-mg-white">programs.</span>
             </ClipLine>
-            <ClipLine delay={0.34}>for performance brands.</ClipLine>
           </h1>
 
           <motion.p
