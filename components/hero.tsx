@@ -53,11 +53,12 @@ export function Hero() {
               letterSpacing: "-0.035em",
             }}
           >
-            <ClipLine delay={0.12}>
-              We run race{" "}
+            <ClipLine delay={0.12}>We&apos;re the team</ClipLine>
+            <ClipLine delay={0.26}>
+              behind the{" "}
               <span className="relative inline-block">
-                <span className="t-editorial italic text-mg-white">programs.</span>
-                <RedUnderline />
+                <span className="t-editorial italic text-mg-white">team.</span>
+                <RedUnderline delay={0.95} />
               </span>
             </ClipLine>
           </h1>
