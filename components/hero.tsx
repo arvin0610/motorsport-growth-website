@@ -38,13 +38,8 @@ export function Hero() {
       </div>
 
       <div className="relative z-10 mx-auto grid min-h-[100svh] w-full max-w-[1640px] grid-cols-12 gap-x-5 px-5 pb-28 pt-32 md:px-8 md:pt-40">
-        {/* Top section index */}
-        <div className="col-span-12 -mt-6 md:col-span-6">
-          <p className="t-eyebrow !text-mg-bone">00 / HERO</p>
-        </div>
-
         {/* Left column — one-line headline + subhead + CTAs */}
-        <div className="col-span-12 mt-12 md:col-start-1">
+        <div className="col-span-12 md:col-start-1">
           <h1
             className="t-display text-mg-white"
             style={{
@@ -53,11 +48,11 @@ export function Hero() {
               letterSpacing: "-0.035em",
             }}
           >
-            <ClipLine delay={0.12}>We&apos;re the team</ClipLine>
+            <ClipLine delay={0.12}>This is motorsport,</ClipLine>
             <ClipLine delay={0.26}>
-              behind the{" "}
+              run like a{" "}
               <span className="relative inline-block">
-                <span className="t-editorial italic text-mg-white">team.</span>
+                <span className="t-editorial italic text-mg-white">business.</span>
                 <RedUnderline delay={0.95} />
               </span>
             </ClipLine>
