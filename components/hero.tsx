@@ -57,9 +57,12 @@ export function Hero() {
               We run{" "}
               <span className="relative inline-block">
                 <span>race</span>
-                <RaceUnderline />
+                <RedUnderline />
               </span>{" "}
-              <span className="t-editorial italic text-mg-white">programs.</span>
+              <span className="relative inline-block">
+                <span className="t-editorial italic text-mg-white">programs.</span>
+                <RedUnderline delay={0.95} />
+              </span>
             </ClipLine>
           </h1>
 
@@ -137,8 +140,9 @@ function ClipLine({ children, delay = 0 }: { children: React.ReactNode; delay?: 
   );
 }
 
-/** Hand-drawn-feeling underline beneath the word "race" — animates on mount. */
-function RaceUnderline() {
+/** Hand-drawn-feeling red underline — animates on mount. Reused under
+ *  any word in the headline that should carry the brand accent. */
+function RedUnderline({ delay = 0.55 }: { delay?: number }) {
   return (
     <svg
       aria-hidden
@@ -154,7 +158,7 @@ function RaceUnderline() {
         strokeLinecap="round"
         initial={{ pathLength: 0 }}
         animate={{ pathLength: 1 }}
-        transition={{ duration: 0.9, delay: 0.55, ease: easeMg }}
+        transition={{ duration: 0.9, delay, ease: easeMg }}
       />
     </svg>
   );
