@@ -54,14 +54,10 @@ export function Hero() {
             }}
           >
             <ClipLine delay={0.12}>
-              We run{" "}
-              <span className="relative inline-block">
-                <span>race</span>
-                <RedUnderline />
-              </span>{" "}
+              We run race{" "}
               <span className="relative inline-block">
                 <span className="t-editorial italic text-mg-white">programs.</span>
-                <RedUnderline delay={0.95} />
+                <RedUnderline />
               </span>
             </ClipLine>
           </h1>
