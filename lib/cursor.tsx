@@ -24,23 +24,11 @@ export function Cursor() {
     if (!fine || reduce) return;
     setEnabled(true);
 
-    let mx = -100;
-    let my = -100;
-    let cx = -100;
-    let cy = -100;
-    let raf = 0;
-
     const onMove = (e: MouseEvent) => {
-      mx = e.clientX;
-      my = e.clientY;
-    };
-
-    const tick = () => {
-      cx += (mx - cx) * 0.22;
-      cy += (my - cy) * 0.22;
       const el = ref.current;
-      if (el) el.style.transform = `translate3d(${cx}px, ${cy}px, 0) translate(-50%, -50%)`;
-      raf = requestAnimationFrame(tick);
+      if (el) {
+        el.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0) translate(-50%, -50%)`;
+      }
     };
 
     // Tri-state: null = not hot. "" = hot, no label. "TEXT" = hot, with label.
@@ -86,13 +74,11 @@ export function Cursor() {
     window.addEventListener("mousemove", onMove, { passive: true });
     window.addEventListener("mouseover", onOver, { passive: true });
     window.addEventListener("mouseout", onOut, { passive: true });
-    raf = requestAnimationFrame(tick);
 
     return () => {
       window.removeEventListener("mousemove", onMove);
       window.removeEventListener("mouseover", onOver);
       window.removeEventListener("mouseout", onOut);
-      cancelAnimationFrame(raf);
     };
   }, []);
 

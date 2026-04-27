@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { motion } from "motion/react";
 import { CloudFog, ArrowDown } from "lucide-react";
@@ -22,19 +21,27 @@ export function Hero() {
       aria-label="Hero"
       className="relative w-full overflow-hidden bg-mg-black"
     >
-      {/* Full-bleed background image */}
+      {/* Full-bleed background video — silent, looping, muted, autoplay.
+          Poster falls back to the hero stills so something paints before
+          the video buffers. WebM served first to Chromium/Firefox; MP4 is
+          the universal fallback for Safari + iOS. */}
       <div className="pointer-events-none absolute inset-0 z-0">
-        <Image
-          src="/assets/hero/hero-primary.jpg"
-          alt=""
-          fill
-          priority
-          quality={90}
-          sizes="100vw"
-          className="object-cover object-[60%_55%]"
-        />
-        {/* Flat dark scrim — solid, not gradient. Brings white text to AAA contrast. */}
-        <div className="absolute inset-0 bg-mg-black/55" aria-hidden />
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="metadata"
+          poster="/assets/hero/hero-primary.jpg"
+          aria-hidden
+          className="absolute inset-0 h-full w-full object-cover object-[60%_55%]"
+        >
+          <source src="/assets/hero/video/hero.webm" type="video/webm" />
+          <source src="/assets/hero/video/hero.mp4" type="video/mp4" />
+        </video>
+        {/* Flat dark scrim — solid, not gradient. Heavier (68%) so the
+            video's brighter peaks don't flicker through. */}
+        <div className="absolute inset-0 bg-mg-black/68" aria-hidden />
       </div>
 
       <div className="relative z-10 mx-auto grid min-h-[100svh] w-full max-w-[1640px] grid-cols-12 gap-x-5 px-5 pb-28 pt-32 md:px-8 md:pt-40">
