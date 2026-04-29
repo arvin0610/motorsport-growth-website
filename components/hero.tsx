@@ -22,9 +22,8 @@ export function Hero() {
       className="relative w-full overflow-hidden bg-mg-black"
     >
       {/* Full-bleed background video — silent, looping, muted, autoplay.
-          Poster falls back to the hero stills so something paints before
-          the video buffers. WebM served first to Chromium/Firefox; MP4 is
-          the universal fallback for Safari + iOS. */}
+          Source is the original MP4 (3840x2400, uncompressed). Poster
+          paints first while the video buffers. */}
       <div className="pointer-events-none absolute inset-0 z-0">
         <video
           autoPlay
@@ -36,7 +35,6 @@ export function Hero() {
           aria-hidden
           className="absolute inset-0 h-full w-full object-cover object-[60%_55%]"
         >
-          <source src="/assets/hero/video/hero.webm" type="video/webm" />
           <source src="/assets/hero/video/hero.mp4" type="video/mp4" />
         </video>
         {/* Flat dark scrim — solid, not gradient. Heavier (68%) so the
